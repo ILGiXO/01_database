@@ -56,3 +56,4 @@ SELECT * from tbl_payment;
 SELECT * FROM tbl_payment;
 SELECT * FROM tbl_payment_order;
 
+ tbl_menu;
