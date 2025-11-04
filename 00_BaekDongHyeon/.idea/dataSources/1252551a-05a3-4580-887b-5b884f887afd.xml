@@ -1510,36 +1510,43 @@ menudb|schema||swcamp||UPDATE|G</Grants>
     <collation id="553" parent="1" name="utf8mb4_vietnamese_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="554" parent="1" name="information_schema">
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </schema>
-    <schema id="555" parent="1" name="menudb">
+    <schema id="554" parent="1" name="employeedb">
+      <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
+      <LastIntrospectionLevel>3</LastIntrospectionLevel>
+      <LastIntrospectionLocalTimestamp>2025-11-04.03:26:23</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
     </schema>
-    <schema id="556" parent="1" name="mysql">
+    <schema id="555" parent="1" name="information_schema">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <schema id="556" parent="1" name="menudb">
       <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
     </schema>
-    <schema id="557" parent="1" name="performance_schema">
+    <schema id="557" parent="1" name="mysql">
+      <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
+    </schema>
+    <schema id="558" parent="1" name="performance_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="558" parent="1" name="sys">
+    <schema id="559" parent="1" name="sys">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <user id="559" parent="1" name="mariadb.sys">
+    <user id="560" parent="1" name="mariadb.sys">
       <Host>localhost</Host>
     </user>
-    <user id="560" parent="1" name="root">
+    <user id="561" parent="1" name="practice"/>
+    <user id="562" parent="1" name="root">
       <Host>127.0.0.1</Host>
     </user>
-    <user id="561" parent="1" name="root">
+    <user id="563" parent="1" name="root">
       <Host>::1</Host>
     </user>
-    <user id="562" parent="1" name="root">
+    <user id="564" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <user id="563" parent="1" name="root">
+    <user id="565" parent="1" name="root">
       <Host>playdata</Host>
     </user>
-    <user id="564" parent="1" name="swcamp"/>
+    <user id="566" parent="1" name="swcamp"/>
   </database-model>
 </dataSource>
