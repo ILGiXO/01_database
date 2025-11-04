@@ -11,11 +11,12 @@ SELECT menu_name, menu_price
 from tbl_menu;
 
 -- 2번. 별칭(AS)을 사용하여 현재 날짜와 시간을 '조회시각'이라는 이름으로 출력하세요.
-
+SELECT NOW() AS 현재시간;
 
 -- 3번. tbl_category 테이블의 모든 컬럼을 조회하세요.
 SELECT *
 FROM tbl_category;
+
 
 -- ========================================
 -- ORDER BY 문제
