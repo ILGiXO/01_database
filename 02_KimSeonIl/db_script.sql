@@ -64,8 +64,7 @@ CREATE TABLE IF NOT EXISTS tbl_payment_order
     payment_code    INT NOT NULL COMMENT '결제코드',
     PRIMARY KEY (payment_code, order_code),
     CONSTRAINT fk_payment_order_order_code FOREIGN KEY (order_code) REFERENCES tbl_order (order_code),
-    CONSTRAINT fk
-_payment_order_payment_code FOREIGN KEY (order_code) REFERENCES tbl_payment (payment_code)
+    CONSTRAINT fk_payment_order_payment_code FOREIGN KEY (order_code) REFERENCES tbl_payment (payment_code)
 ) ENGINE=INNODB COMMENT '결제별주문';
 
 -- 데이터 삽입
