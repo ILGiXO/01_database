@@ -126,3 +126,4 @@ FROM employee
 WHERE emp_id = 200;
 
 SELECT * FROM salary_history;
+

@@ -48,7 +48,7 @@ SELECT * FROM national;
 SELECT * FROM location;
 SELECT * FROM sal_grade;
 
-SELECT e.EMP_NAME, e.SALARY, FORMAT((e.SALARY*e.BONUS+e.SALARY),0)
+SELECT e.EMP_NAME, e.SALARY, IFNULL(FORMAT((e.SALARY*e.BONUS+e.SALARY),0),'없다') '보너스포함 월급'
 FROM employee e
 JOIN department d ON e.DEPT_CODE = d.DEPT_ID
 ORDER BY FORMAT((e.SALARY*e.BONUS+e.SALARY),0)  ASC;
@@ -65,17 +65,14 @@ HINT 1
 급여에 보너스를 더한 금액을 구하고자 할 때, 보너스가 0이라면 원하는 값이 나오지 않
 을 겁니다. 수업 시간에 다루지 않았지만 NULL 값을 다른 값으로 대체하는 내장함수가
 있습니다. 해당 함수를 찾아서 사용해 보세요🙂
-HINT 2
-FORMAT
-HINT 3
-CONCAT
-HINT 4
-TRUNCATE
+HINT 2 FORMAT
+HINT 3 CONCAT
+HINT 4 TRUNCATE
 DAY5: Question 4
-HINT 5
-ROUND
+HINT 5 ROUND
 */
-
+    SELECT EMP_NAME,SALARY,BONUS , TRUNCATE((BONUS*SALARY)+SALARY ,2)"TOTAL_SALAY"
+    FROM employee;
 /*
 Q4.
 직원의 직원명과 이메일을 다음과 같이 출력하세요.
@@ -90,7 +87,12 @@ DAY5: Question 5
 HINT 3
 서브쿼리
 답안*/
+SELECT *
+FROM employee;
 
+SELECT *
+FROM employee
+JOIN
 /*+@ (심화)
 이메일의 도메인 주소가 모두 다르다고 가정할 때, @의 위치를 한 줄로 맞추고 싶은 경
 우에는 어떻게 수정할 수 있을까?
@@ -102,16 +104,13 @@ Q5.
 사내 행사 준비를 위해 직원 목록을 출력하려고 합니다. 직원 목록을 다음과 같이 출력하세요.
 단, 관리자의 이름순으로 정렬하여 출력되도록 하세요.
 직원명, 직급명, 주민등록번호, 부서가 있는 국가, 부서명, 해당 직원의 관리자 직원명을 출력해야 함*/
-SELECT e.EMP_NAME, j.JOB_NAME/*, RPAD(substring(e.EMP_NO, 9,'*'))*/, concat(concat_ws(' ',n.NATIONAL_NAME, l.LOCAL_NAME),'소속'), d.DEPT_TITLE, concat( concat_ws(' ',e.EMP_NAME,j.JOB_NAME),'님') "NAME_TAG"
-FROM employee e
-JOIN department d ON e.DEPT_CODE = d.DEPT_ID
-JOIN location l ON d.LOCATION_ID = l.LOCAL_CODE
-JOIN national n ON l.NATIONAL_CODE = n.NATIONAL_CODE
-JOIN job j ON e.JOB_CODE = j.JOB_CODE;
+
+
 /*DAY5: Question 6
 출력한 결과집합 헤더의 명칭은 각각 ‘NAME_TAG’, ‘EMP_NO’, ‘BELONG’,
 ‘MANAGER_NAME’이어야 하며 출력 형식은 각각 아래와 같아야 함
 NAME_TAG : (직원명) (직급명)님
+
 EMP_NO : (생년월일6자리)-(뒷자리 한 자리를 제외하고는 *로 표시)
 BELONG : (부서의 국가)지사 (부서명) 소속
 HINT 1
@@ -123,7 +122,12 @@ HINT 3
 RPAD
 HINT 4
 SUBSTRING*/
-
+SELECT e.EMP_NAME, j.JOB_NAME/*, RPAD(substring(e.EMP_NO, 9,'*'))*/, concat(concat_ws(' ',n.NATIONAL_NAME, l.LOCAL_NAME),'소속'), d.DEPT_TITLE, concat( concat_ws(' ',e.EMP_NAME,j.JOB_NAME),'님') "NAME_TAG"
+FROM employee e
+JOIN department d ON e.DEPT_CODE = d.DEPT_ID
+JOIN location l ON d.LOCATION_ID = l.LOCAL_CODE
+JOIN national n ON l.NATIONAL_CODE = n.NATIONAL_CODE
+JOIN job j ON e.JOB_CODE = j.JOB_CODE;
 
 
 SELECT * FROM employee;
